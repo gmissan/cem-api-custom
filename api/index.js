@@ -6,7 +6,7 @@ import { combinaCSV } from "./utils/varios.js";
 const app = new express();
 app.use(express.json());
 
-app.get("/closingPricesAndSpot/", async function (req, res)  {
+app.get("/api/closingPricesAndSpot/", async function (req, res)  {
   
   const params = req.query || {from: '2023-10-01', to: '2023-10-06'}
   const [csvClosingPrices, csvSpots] = await Promise.all([getClosingPrices(params), getSpotPrices(params)])
